@@ -1,0 +1,47 @@
+<style>
+  #canvas{
+      background: transparent;
+  }
+</style>
+
+<h1>To the Internet</h1>
+
+<canvas id="canvas"></canvas> 
+
+<script>
+  const canvas = document.querySelector('#canvas'); 
+  const ctx = canvas.getContext('2d'); 
+  
+  let coord = {x:0 , y:0}; 
+
+  function resize(){ 
+    ctx.canvas.width = window.innerWidth; 
+    ctx.canvas.height = window.innerHeight; 
+  }
+  
+  function getPosition(event){ 
+    coord.x = event.clientX - canvas.offsetLeft; 
+    coord.y = event.clientY - canvas.offsetTop; 
+  } 
+
+  function sketch(event){ 
+    ctx.beginPath(); 
+    ctx.lineWidth = 5; 
+    ctx.lineCap = 'round'; 
+
+    ctx.moveTo(coord.x, coord.y); //start of line
+    getPosition(event); //update mouse position
+    ctx.lineTo(coord.x , coord.y); //end of line
+
+    ctx.stroke(); 
+  }
+  
+  window.addEventListener('load', ()=>{ 
+      resize();
+      getPosition(event)
+      ctx.clearRect(0,0,ctx.width,ctx.height);
+      document.addEventListener('mousemove', sketch); 
+      window.addEventListener('resize', resize); 
+  }); 
+
+</script>
