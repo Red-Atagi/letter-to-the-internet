@@ -1,10 +1,14 @@
-<style>
-  #canvas{
-      background: transparent;
-  }
-</style>
+<h1>Dear Internet</h1>
+<p>
+  You have been touched by many <br>
+  but I wonder where are <a href="https://github.com/Red-Atagi" target="_blank">my figure prints</a> <br>
+  you're been a <a href="https://www.youtube.com/@PSJR/" target="_blank">big part of my life</a> for while<br>
+  I'm a <a href="https://csil.cs.uchicago.edu/staff" target="_blank">small part of yours </a>
+</p>
 
-<h1>To the Internet</h1>
+<p>
+  I've learned plenty but I can't wait to walk with you through more doors
+</p> 
 
 <canvas id="canvas"></canvas> 
 
@@ -12,7 +16,14 @@
   const canvas = document.querySelector('#canvas'); 
   const ctx = canvas.getContext('2d'); 
   
-  let coord = {x:0 , y:0}; 
+  let coord = {x:0 , y:0};
+  let color = 0x000000
+  
+  function changeColor() {
+    let cNum = Math.floor((Math.random() * 0xFFFFFF));
+    color = "#" + cNum.toString(16).padStart(6, "0");
+    console.log(color);
+  }
 
   function resize(){ 
     ctx.canvas.width = window.innerWidth; 
@@ -27,7 +38,8 @@
   function sketch(event){ 
     ctx.beginPath(); 
     ctx.lineWidth = 5; 
-    ctx.lineCap = 'round'; 
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = color;
 
     ctx.moveTo(coord.x, coord.y); //start of line
     getPosition(event); //update mouse position
@@ -37,11 +49,12 @@
   }
   
   window.addEventListener('load', ()=>{ 
-      resize();
-      getPosition(event)
-      ctx.clearRect(0,0,ctx.width,ctx.height);
-      document.addEventListener('mousemove', sketch); 
-      window.addEventListener('resize', resize); 
+    resize();
+    getPosition(event)
+    ctx.clearRect(0,0,ctx.width,ctx.height);
+    document.addEventListener('mousemove', sketch);
+    document.addEventListener('mousedown', changeColor);
+    window.addEventListener('resize', resize);
   }); 
 
 </script>
