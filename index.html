@@ -1,40 +1,236 @@
 <style>
+  :root {
+    --box-width: 65px;
+    --box-height: 20px
+  }
   * {
-    /*background-color: #c04040;*/
     font-family: "Comic Sans MS", sans-serif;
   }
   
   canvas {
     background-color: transparent;
     position: fixed;
-    top:0px;
-    left:0px;
+    top: 0px;
+    left: 0px;
     z-index: -1;
   }
   
-  
   h1 {
-    width: 50%;
+    width: 221px;
     margin: auto;
     padding-bottom: 25px;
   }
   
+  p {
+    text-align: center;
+  }
+  
+  .box {
+/*     background-color: red; */
+/*     border-style: solid; */
+    width: var(--box-width);
+    height: var(--box-height);
+    position: absolute;
+    text-align: center;
+  }
+  
+  #bernadette {
+    animation: x50 27s linear infinite, y100 11s linear infinite;
+  }
+  
+  #natalyah {
+    animation: x50 39s linear infinite, y50 54s linear infinite;
+  }
+  
+  #toby {
+      animation: x50 7s linear infinite, y0 24s linear infinite;
+  }
+  
+  #diana {
+    animation: x0 20s linear infinite, y50 16s linear infinite;
+  }
+  
+  #chris {
+    animation: x0 37s linear infinite, y0 60s linear infinite;
+  }
+  
+  #annie {
+    animation: x0 32s linear infinite, y100 11s linear infinite;
+  }
+  
+  #sana {
+    animation: x100 8s linear infinite, y50 40s linear infinite;
+  }
+  
+  #sanaa {
+    animation: x100 9s linear infinite, y0 57s linear infinite;
+  }
+  
+  #ron {
+    animation: x100 56s linear infinite, y100 53s linear infinite;
+  }
+  
+  #alex {
+    animation: x50 13s linear infinite, y50 31s linear infinite reverse;
+    
+  }
+  
+  #lola {
+    animation: x50 18s linear infinite, y0 22s linear infinite reverse;    
+  }
+  
+  #lonimi {
+    animation: x50 3s linear infinite, y100 10s linear infinite reverse;
+  }
+  
+  #manuela {
+    animation: x0 19s linear infinite, y50 6s linear infinite reverse;
+  }
+  
+  #tigo {
+    animation: x100 5s linear infinite, y50 8s linear infinite reverse;
+  }
+  
+  #ying {
+   animation: x50 7s linear infinite, y50 13s linear infinite; 
+  }
+  
+  #abby {
+    animation: x50 5s linear infinite, y50 59s linear infinite reverse;
+  }
+
+  
+  @keyframes x0 {
+    0% {left: 0vw;}
+    50% { left: calc(100vw - var(--box-width));}
+    100% {left: 0vw;}
+  }
+  
+  @keyframes x50 {
+    0% {left: 50vw;}
+    25% { left: calc(100vw - var(--box-width));}
+    75% {left: 0vw;}
+    100% { left: 50vw; }
+  }
+  
+  @keyframes x100 {
+    0% {left: calc(100vw - var(--box-width));}
+    50% { left: 0;}
+    100% {left: calc(100vw - var(--box-width));}
+  }
+  
+  @keyframes y0 {
+    0% {top: 0vh;}
+    50% { top: calc(100vh - var(--box-height));}
+    100% {top: 0vh;}
+  }
+  
+  @keyframes y50 {
+    0% { top: 50vh; }
+    25% { top: calc(100vh - var(--box-height));}
+    75% { top: 0vh;}
+    100% { top: 50vh;}
+  }
+
+  @keyframes y100 {
+    0% {top: calc(100vh - var(--box-height));}
+    50% {top: 0;}
+    100% {top: calc(100vh - var(--box-height));}
+  }
 
 </style>
 
 <h1>Dear Internet</h1>
 <p>
   You have been touched by many <br>
-  but I wonder where are <a href="https://github.com/Red-Atagi" target="_blank">my figure prints</a> <br>
-  you're been a <a href="https://www.youtube.com/@PSJR/" target="_blank">big part of my life</a> for while<br>
-  I'm a <a href="https://csil.cs.uchicago.edu/staff" target="_blank">small part of yours </a>
+  but I wonder where are my figure prints<br>
+  you're been a big part of my life for while<br>
+  I'm a small part of yours<br><br>
+  I've learned plenty but I can't wait to do more
 </p>
 
-<p>
-  I've learned plenty but I can't wait to walk with you through more doors
-</p> 
-
 <canvas id="canvas"></canvas> 
+
+<!-- Bernadete -->
+<a href="https://bbroscius.github.io/" target="_blank">
+  <div id="bernadette" class="box">Click Me</div>
+</a>
+
+<!-- natalyah -->
+<a href="https://ncadiche.github.io/letter-to-internet/" target="_blank">
+  <div id="natalyah" class="box">Click Me</div>
+</a>
+
+<!-- Toby -->
+<a href="https://tchan1002.github.io/open-letter/" target="_blank">
+  <div id="toby" class="box">Click Me</div>
+</a>
+
+<!-- Diana -->
+<a href="https://dianachu0209.github.io/letter-to-internet/" target="_blank">
+  <div id="diana" class="box">Click Me</div>
+</a>
+
+<!-- Chris -->
+<a href="https://progamer-chef.github.io/DI-1/" target="_blank">
+  <div id="chris" class="box">Click Me</div>
+</a>
+
+<!-- Annie -->
+<a href="https://thegoatannie.github.io/css_letter/" target="_blank">
+  <div id="annie" class="box">Click Me</div>
+</a>
+
+<!-- Sana -->
+<a href="https://shfessuh.github.io/internet_letter/" target="_blank">
+  <div id="sana" class="box">Click Me</div>
+</a>
+
+<!-- Sanaa -->
+<a href="https://sanaajade.github.io/DearInternet_Sanaa/" target="_blank">
+  <div id="sanaa" class="box">Click Me</div>
+</a>
+
+<!-- Ron -->
+<a href="https://ronthekiehn.github.io/internet-letter/" target="_blank">
+  <div id="ron" class="box">Click Me</div>
+</a>
+
+<!-- Alex -->
+<a href="https://alex-malm.github.io/letter-to-the-internet/" target="_blank">
+  <div id="alex" class="box">Click Me</div>
+</a>
+
+<!-- Lola -->
+<a href="https://tchan1002.github.io/open-letter/" target="_blank">
+  <div id="lola" class="box">Click Me</div>
+</a>
+
+<!-- Lonimi -->
+<a href="https://oluwalonimi2004.github.io/Dearest-Internet/" target="_blank">
+  <div id="lonimi" class="box">Click Me</div>
+</a>
+
+<!-- Manuela -->
+<a href="https://manuelapinheiro.github.io/letter_to_the_internet_part1/" target="_blank">
+  <div id="manuela" class="box">Click Me</div>
+</a>
+
+<!-- Tigo -->
+<a href="https://tigo-poncedeleon.github.io/an-open-letter-to-the-internet/" target="_blank">
+  <div id="tigo" class="box">Click Me</div>
+</a>
+
+<!-- Ying -->
+<a href="https://yruann.github.io/letter-to-internet/" target="_blank">
+  <div id="ying" class="box">Click Me</div>
+</a>
+
+<!-- Abby -->
+<a href="https://abigailstarr.github.io/internet-letter/" target="_blank">
+  <div id="abby" class="box">Click Me</div>
+</a>
+
 
 <script>
   const canvas = document.querySelector('#canvas'); 
